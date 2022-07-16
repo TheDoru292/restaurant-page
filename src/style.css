@@ -47,10 +47,17 @@ div#content {
     min-height: calc(100vh - (var(--footer-dimension) + var(--header-dimension)));
 }
 
-.main > p {
-    font-size: 18px;
+.main > * {
     margin-left: 20px;
     margin-top: 15px;
+}
+
+.main > p {
+    font-size: 18px;
+}
+
+.main > img {
+    width: 750px;
 }
 
 .footer {
