@@ -1,4 +1,4 @@
-import initialize from './changePage.js';
+import { homeTab, contactTab, menuTab } from './changePage.js';
 import './style.css';
 
 function createPage() {
@@ -41,10 +41,26 @@ function createPage() {
     for(const item of menuArray) {
         item.addEventListener('click', e => {
             let value = e.target.textContent;
-            initialize(value, mainContent);
+            checkValue(value, mainContent);
         });
     }
 
+}
+
+function checkValue(value, element) {
+    switch(value) {
+        case "Home":
+            homeTab(element);
+            break;
+        case "Menu":
+            menuTab(element);
+            break;
+        case "Contact":
+            contactTab(element);
+            break;
+        default:
+            console.log("uh oh");
+    }
 }
 
 createPage();

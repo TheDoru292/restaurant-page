@@ -1,22 +1,6 @@
 import contactImage from './image.jpg';
 
-export default function initialize(value, content) {
-    switch(value) {
-        case "Home":
-            changeToHome(content);
-            break;
-        case "Menu":
-            changeToMenu(content);
-            break;
-        case "Contact":
-            changeToContact(content);
-            break;
-        default:
-            console.log("uh oh");
-    }
-}
-
-function changeToHome(content) {
+function homeTab(content) {
     content.textContent = '';
 
     const mainParagraphOne = document.createElement('p');
@@ -27,7 +11,7 @@ function changeToHome(content) {
     content.append(mainParagraphOne, mainParagraphTwo);
 }
 
-function changeToMenu(content) {
+function menuTab(content) {
     content.textContent = '';
 
     const firstMenuItem = document.createElement('div');
@@ -45,7 +29,7 @@ function createMenuItem(name, quality, price) {
     return string;
 }
 
-function changeToContact(content) {
+function contactTab(content) {
     content.textContent = '';
 
     const phoneNumber = document.createElement('p');
@@ -58,4 +42,10 @@ function changeToContact(content) {
     image.src = contactImage;
 
     content.append(phoneNumber, address, image);
+}
+
+export {
+    menuTab,
+    contactTab,
+    homeTab
 }
